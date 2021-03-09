@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<!--
+	HTML
+	web o pagina:
+	autor: Carlos Boni
+	fecha: Marzo 2021
+-->
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<!-- importante SEO para la etiqueta del navegador -->
+	<title>Trabajo Final T2 - Antonio Delgado</title>
+	
+	<!-- una fuente de Google -->
+	<link rel="preconnect" href="https://fonts.gstatic.com"/>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"/>
+	
+	<!-- una hoja de estilos externa-->
+	
+	<!-- una hoja de estilos personalizada-->
+	<link href="actualidad.css" rel="stylesheet"/>
+	
+	<!-- iconos u otros elementos externos -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	
+	<!-- solo aquellos estilos que solo aplican a esta pagina -->
+	<style>
+
+
+	</style>
+	
+	<!-- scripts externos de librerias que usaremos, por ejemplo Bootstrap o JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- scripts externos de desarrollo propio en Javascript o JQuery -->
+	<script src="actualidad.js"></script>
+	
+	<!-- scripts personalizados Javascript o JQuery -->
+</head>
+
+
+<body>
+
+	<div class="marco">
+		<div class="encabezado">
+			<nav class="nav-encabezado">
+				<div id="inicio-encabezado"><a href="../index.html">Inicio</a></div>
+				<div id="actualidad-encabezado"><a href="#">Actualidad</a></div>
+				<div id="blog-encabezado"><a href="#">Blog</a></div>
+				<div id="tendencias-encabezado"><a href="#">Tendencias</a></div>
+				<div id="contactar-encabezado"><a href="#">Contactar</a></div>
+				<div id="contador-encabezado">Has visitado: <span id="contador">0</span> veces esta pagina.</div>
+			</nav>
+		</div>
+		<div class="migas">
+			<div id="ruta"></div>
+		</div>
+		<div class="lado">
+			<div class="nav-lado">
+				<div id="inicio-lado"><a href="../index.html">Inicio</a></div>
+				<div id="actualidad-lado"><a href="#">Actualidad</a></div>
+				<div id="blog-lado"><a href="#">Blog</a></div>
+				<div id="tendencias-lado"><a href="#">Tendencias</a></div>
+				<div id="contactar-lado"><a href="#">Contactar</a></div>
+			</div>
+		</div>
+		<main class="contenido">
+			<div class="imgIzq">
+				<img src="../imagenes/portadaPixelesEspia.jpg" class="portadaPixeles"/>	
+			</div>
+			<h2>Los pixeles espias.</h2><br>
+			Los pixeles espias son pixeles de 1x1 que suelen estar escondidos .png o .gif, normalmente usados en la cabecera, pie de pagina o incluso en el cuerpo del correo electrónico. A simple vistas con casi imposibles de detectar, luego para poder detectarlos tenemos que usar algunas aplicaciones externas como por ejemplo "HEY" que alerta a sus usuarios cuando detecta un pixel espia
+			<div class="imgDer">
+				<img src="../imagenes/imagenPixeles.jpg" class="imagenPixeles" />
+			</div>
+			Aunque esta ventaja solo esta disponible en la versión de pago.<br>
+			<strong>Solo con abrir el correo es suficiente para activarlo</strong>, con
+			este unico paso es suficiente para que el pixel espia tenga la información que quiera. Y, ¿Que información puede obtener?, he aquí una lista de menor a mayor gravedad que puede obtener un pixel espia:<br>
+			<ul>
+				<li><mark id="verde">Si el email ha sido abierto y cuantas veces ha sido abierto</mark></li>
+				<li><mark id="verde">Que dispositivo o dispositivos lo han abierto y con que cliente de correo.</mark></li>
+				<li><mark id="rojo">La ubicación fisica aproximada a partir de la dirección del protocolo, incluso en algunos casos llegando hasta una calle cercana.</mark></li>
+			</ul>
+			Este ultimo es en mi opinión, uno de los mas peligrosos y con esta pregunta pasamos a la siguiente sección.<br>
+			<h2>¿Porque las compañias lo usan tanto?</h2><br>
+			El motivo es bastante simple, es una <strong>tactica de mercado bastante usada</strong>, y es por eso mismo que muchas compañias defienden su uso y estan a favor de los pixeles espias, muchas de ellas alegando que esta incluida en las politicas de privacidad de las empresas. Esta información puede ser luego utilizada para determinar el impacto de una campaña especifica mediante correos electronicos por ejemplo. En mi opinión, me parece una falta muy grave de privacidad, sobre todo la marcada anteriormente en rojo ya que la primera por ejemplo suelen incluirla muchos clientes de correos como "Acuse de recibo" que es algo ya normal hoy en dia, pero que por una imagen puedan descubrir desde donde fisicamente se ha abierto es algo que deberia de solucionarse cuanto antes.
+			<strong>¿Y como podemos solucionar esto?</strong>, una manera de solucionarlo es configurar nuestro correo para que por defecto no cargue las imagenes, de esa manera evitariamos que los pixeles espias se activasen.
+			<strong>Agrego también un video donde se resume todo lo dicho anteriormente:</strong>
+			<iframe id="videoyt" width="560" height="315" src="https://www.youtube.com/embed/L1-cQJFLaSw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		</main>
+		<footer class="pie">2021 - Correo de contacto: adelgado@cenecmalaga.es</footer>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			var x = sessionStorage.getItem('#contador') + 1;
+			if (sessionStorage.getItem('cont')!==null) {
+				x = Number(sessionStorage.getItem('cont')) + x; 
+			}
+			sessionStorage.setItem('cont', x);
+			$("#contador").text(x);
+
+			$("#ruta").text("Actualmente estas en 'Actualidad'");
+
+		});
+	</script>
+
+</body>
+</html>
